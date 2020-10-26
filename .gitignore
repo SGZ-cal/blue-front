@@ -26,6 +26,9 @@ sw.*
 # Optional eslint cache
 .eslintcache
 
+# Nuxt.js テレメトリーファイル
+# Doc: https://nuxtjs.org/api/configuration-telemetry/
+/.nuxtrc
 
 cypress/integration/examples
 cypress/videos
