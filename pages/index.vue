@@ -24,10 +24,29 @@
         </tr>
       </tbody>
     </table>
-
     <div v-else>
       ユーザーが取得できませんでした
     </div>
+    <h2>
+      nuxt-i18nの検証
+    </h2>
+    <table>
+      <thread>
+        <tr>
+          <th>en</th>
+          <th>ja</th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr
+          v-for="(path, i) in ['signup', 'login']"
+          :key="`path-${i}`"
+        >
+          <td>{{ path }}</td>
+          <td>{{ $t(`title.${path}`) }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
