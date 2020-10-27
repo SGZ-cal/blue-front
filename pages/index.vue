@@ -15,7 +15,7 @@
       <tbody>
         <tr
           v-for="(staff, i) in staffs"
-          :key="`user-${i}`"
+          :key="`staff-${i}`"
         >
           <td>{{ staff.id }}</td>
           <td>{{ staff.name }}</td>
