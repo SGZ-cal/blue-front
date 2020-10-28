@@ -8,7 +8,7 @@
 <script>
 import BeforeLoginHeader from '@/components/beforeLoginHeader.vue'
 export default {
-  component: {
+  components: {
     BeforeLoginHeader,
   }
 }
