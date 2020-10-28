@@ -1,24 +1,22 @@
 <template>
   <div>
-    <form @submit.prevent="submit">
-    <UserFormName
-      :name.sync="params.user.name"
-    />
-    <UserFormEmail
-      :email.sync="params.user.email"
-    />
-    <UserFormPassword
-      :password.sync="params.user.password"
-    />
-    <button
-      class="button"
-      type="submit"
-      @click="signup"
-    >
-      登録する
-    </button>
+    <form>
+      <UserFormName
+        :name.sync="params.user.name"
+      />
+      <UserFormEmail
+        :email.sync="params.user.email"
+      />
+      <UserFormPassword
+        :password.sync="params.user.password"
+      />
+      <button
+        class="button"
+        @click="signup"
+      >
+        登録する
+      </button>
     </form>
-    <a>{{ params }}</a>
   </div>
 </template>
 
