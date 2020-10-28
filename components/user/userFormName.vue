@@ -1,8 +1,11 @@
 <template>
-  <input
-    v-model="setName"
-    placeholder="あなたの表示名"
-  />
+  <div>
+    <label>表示名</label>
+    <input
+      v-model="setName"
+      placeholder="あなたの表示名"
+    >
+  </div>
 </template>
 
 <script>

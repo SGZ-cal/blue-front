@@ -1,5 +1,6 @@
 <template>
   <div>
+    <form @submit.prevent="submit">
     <UserFormName
       :name.sync="params.user.name"
     />
@@ -9,6 +10,14 @@
     <UserFormPassword
       :password.sync="params.user.password"
     />
+    <button
+      class="button"
+      type="submit"
+      @click="signup"
+    >
+      登録する
+    </button>
+    </form>
     <a>{{ params }}</a>
   </div>
 </template>
@@ -34,6 +43,17 @@ export default {
         }
       }
     }
-  }
+  },
+  methods: {
+    signup () {
+      setTimeout(() => {
+        this.formReset()
+      }, 1500)
+    },
+    formReset () {
+      // this.$refs.form.reset()
+      this.params = { user: {name: '', email: '', password: '' } }
+    }
+  },
 }
 </script>

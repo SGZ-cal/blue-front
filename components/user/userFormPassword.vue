@@ -1,8 +1,11 @@
 <template>
-  <input
-    v-model="setPassword"
-    placeholder="password"
-  />
+  <div>
+    <label>Password</label>
+    <input
+      v-model="setPassword"
+      placeholder="password"
+    >
+  </div>
 </template>
 
 <script>

@@ -1,8 +1,11 @@
 <template>
-  <input
-    v-model="setEmail"
-    placeholder="you@example.com"
-  >
+  <div>
+    <label>Email</label>
+    <input
+      v-model="setEmail"
+      placeholder="you@example.com"
+    >
+  </div>
 </template>
 
 <script>
