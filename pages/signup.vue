@@ -1,15 +1,39 @@
 <template>
   <div>
-    <SignupForm />
+    <UserFormName
+      :name.sync="params.user.name"
+    />
+    <UserFormEmail
+      :email.sync="params.user.email"
+    />
+    <UserFormPassword
+      :password.sync="params.user.password"
+    />
+    <a>{{ params }}</a>
   </div>
 </template>
 
 <script>
-import SignupForm from "@/components/signupForm.vue"
+import UserFormName from '@/components/user/userFormName.vue'
+import UserFormEmail from '@/components/user/userFormEmail.vue'
+import UserFormPassword from '@/components/user/userFormPassword.vue'
 export default {
   layout: 'beforeLogin',
   components: {
-    SignupForm,
+    UserFormName,
+    UserFormEmail,
+    UserFormPassword,
+  },
+  data () {
+    return {
+      params: {
+        user: {
+          name: '',
+          email: '',
+          password: ''
+        }
+      }
+    }
   }
 }
 </script>
