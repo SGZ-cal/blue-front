@@ -1,72 +1,18 @@
 <template>
   <div>
-    <h2>
-      Staffsテーブルの取得
-    </h2>
-    <table v-if="staffs.length">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>email</th>
-          <th>created_at</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(staff, i) in staffs"
-          :key="`staff-${i}`"
-        >
-          <td>{{ staff.id }}</td>
-          <td>{{ staff.name }}</td>
-          <td>{{ staff.email }}</td>
-          <td>{{ dateFormat(staff.created_at) }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div v-else>
-      ユーザーが取得できませんでした
-    </div>
-    <h2>
-      nuxt-i18nの検証
-    </h2>
-    <table>
-      <thread>
-        <tr>
-          <th>en</th>
-          <th>ja</th>
-        </tr>
-      </thread>
-      <tbody>
-        <tr
-          v-for="(path, i) in ['signup', 'login']"
-          :key="`path-${i}`"
-        >
-          <td>{{ path }}</td>
-          <td>{{ $t(`title.${path}`) }}</td>
-        </tr>
-      </tbody>
-    </table>
+    index.vue
   </div>
 </template>
 
+
 <script>
+// import Index from '@/components/Index.vue'
 export default {
-  async asyncData ({ $axios }) {
-    let staffs = []
-    await $axios.$get('/api/v1/staffs')
-      .then(res => (staffs = res))
-    return { staffs }
-  },
-  computed: {
-    dateFormat () {
-      return (date) => {
-        const dateTimeFormat = new Intl.DateTimeFormat(
-          'ja', { dateStyle: 'medium', timeStyle: 'short' }
-        )
-        return dateTimeFormat.format(new Date(date))
-      }
-    }
+  // component: {
+  //   Index
+  // },
+  layout ({ store }) {
+    return store.state.loggedIn ? 'default' : 'welcome'
   }
 }
 </script>
