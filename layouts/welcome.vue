@@ -1,14 +1,15 @@
 <template>
   <div>
-    welcome.vue
+    <BeforeLoginHeader />
+    <a>welcome.vue</a>
   </div>
 </template>
 
 <script>
-// import Welcome from '@/components/Welcome.vue'
+import BeforeLoginHeader from '@/components/beforeLoginHeader.vue'
 export default {
-  // components: {
-  //   Welcome
-  // }
+  components: {
+    BeforeLoginHeader,
+  }
 }
 </script>
