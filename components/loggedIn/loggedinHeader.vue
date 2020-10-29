@@ -8,7 +8,7 @@
         <a href="#">PJ一覧</a>
       </li>
       <li>
-        <a href="#">設定</a>
+        <a href="/account">設定</a>
       </li>
     </ul>
   </header>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <BeforeLoginHeader />
-    <a>welcome.vue</a>
+    <a>未ログイン状態</a>
   </div>
 </template>
 
