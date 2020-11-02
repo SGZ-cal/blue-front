@@ -19,8 +19,8 @@ class MyInject {
   }
 
   // プロジェクトリンク
-  projectLinkTo (id, name = 'project-id-dashboard') {
-    return { name, params: { id } }
+  projectLinkTo (id) {
+    return `project/${id}/dashboard`
   }
 }
 
