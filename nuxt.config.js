@@ -22,7 +22,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    'plugins/axios'
+    'plugins/axios',
+    'plugins/myInject'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -36,12 +37,31 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     // Doc: https://www.npmjs.com/package/nuxt-i18n
     'nuxt-i18n'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: false,
+      home: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/sign_in', method: 'post', propertyName: false },
+          logout: false,
+          user: true
+        }
+      }
+    }
+  },
 
   // Doc: https://nuxt-community.github.io/nuxt-i18n/basic-usage.html#nuxt-link
   i18n: {
