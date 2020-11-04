@@ -1,5 +1,7 @@
 <template>
   <header class="header-container">
+    <AppLogo />
+    <v-spacer />
     <ul class="header-list">
       <li class="header-item">
         <a href="/students">生徒一覧</a>
@@ -14,14 +16,29 @@
   </header>
 </template>
 
+<script>
+import AppLogo from '@/components/ui/appLogo.vue'
+export default {
+  components: {
+    AppLogo,
+  },
+}
+</script>
+
 <style lang="scss" scoped>
-.header-list {
-  width: 100%;
-  height: 80px;
-  line-height: 80px;
+.header-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  padding: 10px 5%;
+  display: flex;
   border-bottom: 0.5px solid gray;
+}
+.header-list {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .header-item {
   padding-left: 50px;

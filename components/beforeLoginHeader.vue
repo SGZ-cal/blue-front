@@ -1,23 +1,30 @@
 <template>
   <header class="header-container">
-    <ul class="header-list">
-      <li class="header-item">
-        <a href="/signup">新規登録</a>
-      </li>
-      <li class="header-item">
-        <a href="/login">ログイン</a>
-      </li>
-    </ul>
+    <AppLogo />
+    <v-spacer />
+    <SignupLink />
+    <LoginLink />
   </header>
 </template>
 
-<style scoped lang="scss">
-.header-list {
-  width: 100%;
-  height: 80px;
-  line-height: 80px;
-  border-bottom: 0.5px solid gray;
+<script>
+import AppLogo from '@/components/ui/appLogo.vue'
+import SignupLink from '@/components/beforeLogin/signupLink.vue'
+import LoginLink from '@/components/beforeLogin/loginLink.vue'
+export default {
+  components: {
+    AppLogo,
+    SignupLink,
+    LoginLink
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.header-container {
+  padding: 10px 5%;
   display: flex;
   justify-content: flex-end;
+  border-bottom: solid 0.5px gray;
 }
 </style>

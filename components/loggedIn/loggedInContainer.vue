@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container fluid>
     <slot name="my-content" />
-  </div>
+  </v-container>
 </template>

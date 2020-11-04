@@ -20,7 +20,10 @@ WORKDIR ${HOME}
 
 COPY package*.json ./
 
-RUN yarn install
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache make gcc g++ python && \
+    yarn install
 
 COPY . .
 

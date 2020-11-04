@@ -31,6 +31,8 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    // Doc: https://www.npmjs.com/package/@nuxtjs/vuetify
+    '@nuxtjs/vuetify'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -65,7 +67,10 @@ export default {
 
   // Doc: https://nuxt-community.github.io/nuxt-i18n/basic-usage.html#nuxt-link
   i18n: {
+    strategy: 'no_prefix',
+    // アプリがサポートしている言語
     locales: ['ja', 'en'],
+    // デフォルトの言語
     defaultLocale: 'ja',
     // Doc: https://kazupon.github.io/vue-i18n/api/#properties
     vueI18n: {
@@ -75,6 +80,26 @@ export default {
       messages: {
         ja: require('./locales/ja.json'),
         en: require('./locales/en.json')
+      }
+    }
+  },
+
+  publicRuntimeConfig: {
+    appName: process.env.APP_NAME
+  },
+
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: '4080BE',
+          info: '4FC1E9',
+          success: '44D69E',
+          warning: 'FEB65E',
+          error: 'FB8678',
+          background: 'f6f6f4',
+          myblue: '1867C0'
+        }
       }
     }
   },

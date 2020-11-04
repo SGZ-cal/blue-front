@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-app>
     <BeforeLoginHeader />
     <nuxt />
-  </div>
+  </v-app>
 </template>
 
 <script>

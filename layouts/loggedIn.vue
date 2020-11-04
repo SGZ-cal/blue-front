@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-app>
     <LoggedinHeader />
     <nuxt />
-  </div>
+  </v-app>
 </template>
 
 <script>

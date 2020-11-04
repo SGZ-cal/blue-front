@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-app>
     <BeforeLoginHeader />
     <a>未ログイン状態</a>
-  </div>
+  </v-app>
 </template>
 
 <script>
